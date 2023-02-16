@@ -1,9 +1,10 @@
 #include <stdio.h>
 
 /**
- * This is a code that prints a string to standard output.
+ * main - Entry point
+ *
+ * Return: Always 0 (Success)
  */
-
 int main(void)
 {
 printf("with proper grammar, but the outcome is a piece of art,\n");
