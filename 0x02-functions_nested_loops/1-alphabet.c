@@ -1,7 +1,7 @@
-# include <stdio.h>
+# include "main.h"
 /**
- * main - prints out alphabets in lower case
- * print_alphabet-function definition of print alphabet
+ * print_alphabet - function that prints alphabets to the screen
+ *
  * Return: 0 always a success
  */
 
@@ -18,6 +18,6 @@ void print_alphabet(void)
 	char a;
 
 	for (a = 97; a <= 122; a++)
-		putchar(a);
-	putchar('\n');
+		_putchar(a);
+	_putchar('\n');
 }
