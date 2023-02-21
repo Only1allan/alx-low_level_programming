@@ -1,29 +1,15 @@
-/*# include "main.h"*/
-# include <stdio.h>
+# include "main.h"
 # include <ctype.h>
 /**
- * main - Entry point
- * Return: 0 always a success
+ * _islower - function that says if a character is an alphabet in lowercase
+ * @c: parameter for the function is lower
+ * Return: void
  */
-int main(void)
-{
-	int r;
 
-    r = islower('H');
-    putchar(r + '0');
-    r = islower('o');
-    putchar(r + '0');
-    r = islower(108);
-    putchar(r + '0');
-    putchar('\n');
-    return (0);
-	
-}
 int _islower(int c)
 {
 	if (c >= 97 && c <= 122)
-		return 1;
+		return (1);
 	else
-		return 0;
-	
+		return (0);
 }
