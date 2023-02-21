@@ -1,4 +1,4 @@
-# include <stdio.h>
+# include "main.h"
 /**
  * main - Function that prints __putchar to the screen
  * Return: 0 always a success
@@ -10,10 +10,10 @@ int main(void)
 
 	while (message[count] != '\0')
 	{
-		putchar(message[count]);
+		_putchar(message[count]);
 		count++;
 	}
-	putchar('\n');
+	_putchar('\n');
 	return (0);
 
 
