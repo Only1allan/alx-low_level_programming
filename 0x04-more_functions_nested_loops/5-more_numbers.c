@@ -12,9 +12,14 @@ void more_numbers(void)
 	{
 		for (y = 0; y <= 14; y++)
 		{
-			int z = y;
-			_putchar(z / 10);
-			_putchar(z % 10);
+			if (y > 9)
+			{
+				int z = y;
+				_putchar(z / 10 + '0');
+				_putchar(z % 10 + '0');
+			}
+			else
+				printf("%d", y);
 		}
 		_putchar('\n');
 	}
