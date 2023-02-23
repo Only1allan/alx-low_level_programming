@@ -1,6 +1,6 @@
 # include "main.h"
-/*
- * print_numbers - a function that prints single digits
+/**
+ * print_numbers - Prints numbers from 0 - 9
  * Return: 0 always a success
  */
 void print_numbers(void)
