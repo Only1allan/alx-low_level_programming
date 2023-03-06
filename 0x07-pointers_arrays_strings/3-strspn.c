@@ -1,27 +1,30 @@
 # include "main.h"
 # include <string.h>
 /**
- * _strspn - a function that gets length of prefix substring
- * @s: paramete string for the function _strspn
- * @accept: value that is in the string s
- * Return: char s
- */
+* _strspn - a function that gets length of prefix substring
+* @s: paramete string for the function _strspn
+* @accept: value that is in the string s
+* Return: char s
+*/
 unsigned int _strspn(char *s, char *accept)
+
 {
-	int i, j, check = 0, count = 0;
+unsigned int n = 0;
+int r;
 
-	for (i = 0; s[i] != '\0'; i++)
-	{
-		for (j =0; accept != '\0'; j++)
-		{
-			if (accept[j] == s[i])
-			{
-				count++;
-				check = 1;
-			}
-		}
-
-	}
-
-
+while (*s)
+{
+for (r = 0; accept[r]; r++)
+{
+if (*s == accept[r])
+{
+n++;
+break;
+}
+else if (accept[r + 1] == '\0')
+return (n);
+}
+s++;
+}
+return (n);
 }
