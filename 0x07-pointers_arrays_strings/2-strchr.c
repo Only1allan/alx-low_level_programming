@@ -1,20 +1,20 @@
-# include "main.h"
-# include <string.h>
+#include "main.h"
 /**
- * _strchr - a function that checks for a particular char in a string
- * @s: parameter for a string to conduct the check
- * @c: parameter of a char being searched for in the string
- * Return: return char
+ * _strchr - entry
+ * @s: input
+ * @c: input
+ * Return: 0
  */
+
 char *_strchr(char *s, char c)
+
 {
+	int i = 0;
 
-	while (*s != '\0')
+	for (; s[i] >= '\0'; i++)
 	{
-		if (*s == c)
-			return (char *)s;
-		s++;
-
+		if (s[i] == c)
+		return (&s[i]);
 	}
-	return (NULL);
+	return (0);
 }
