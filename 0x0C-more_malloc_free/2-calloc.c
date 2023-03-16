@@ -1,30 +1,31 @@
-# include <stdlib.h>
-# include <stdio.h>
-# include "main.h"
+#include <stdlib.h>
+#include "main.h"
 /**
- * _calloc - function that concatenates two strings
- * @s1: parameter for the function
- * @s2: parameter for the function
- * @n: parameter for the function
- *Return: 0 always a success
- */
+  * _calloc - allocates memory of an array using malloc.
+  * @nmemb: number of elements in array.
+  * @size: size of elements of array.
+  *
+  * Return: NULL is size or nmemb == 0.
+  * NULL if malloc fails.
+  * Pointer to memory allocated if successful.
+  */
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
-	char *arr;
+	void *p;
 	unsigned int i;
 
 	if (nmemb == 0 || size == 0)
 		return (NULL);
-
-	arr = malloc(nmemb * size);
-	if (arr == NULL)
+	p = malloc(nmemb * size);
+	if (p == NULL)
+	{
 		return (NULL);
-
-	arr = malloc(nmemb * size);
-	if (arr == NULL)
-		return (NULL);
+	}
 
 	for (i = 0; i < (nmemb * size); i++)
-		arr[i] = 0;
-	return (arr);
+	{
+		*((char *)(p) + i) = 0;
+	}
+
+	return (p);
 }
