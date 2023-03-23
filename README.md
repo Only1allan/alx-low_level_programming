@@ -1,1 +1,1 @@
-Low level programming repo
+A directory about low level programming projects
