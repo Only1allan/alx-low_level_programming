@@ -1,7 +1,7 @@
 #include "lists.h"
 /**
  * listint_len - function that returns the len of elements in a linked list
- * @h - pointer to the structure 
+ * @h: pointer to the structure
  * Return: number of elements
  */
 size_t listint_len(const listint_t *h)
