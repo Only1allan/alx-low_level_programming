@@ -8,7 +8,7 @@
 unsigned int binary_to_uint(const char *b)
 {
 	unsigned int conv_num = 0, base = 1;
-	int len = _strlen(b), i;
+	int len = strlen(b), i;
 
 	if (b == NULL)
 		return (0);
@@ -25,12 +25,4 @@ unsigned int binary_to_uint(const char *b)
 		base *= 2;
 	}
 	return (conv_num);
-}
-int _strlen(char *string)
-{
-	int i = 0;
-
-	while (string != '\0')
-		i++;
-	return (i);
 }
