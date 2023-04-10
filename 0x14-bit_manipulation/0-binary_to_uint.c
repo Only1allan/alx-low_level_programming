@@ -1,15 +1,26 @@
 #include <stdio.h>
 #include <string.h>
-#include "main.h"
 
 unsigned int binary_to_uint(const char *b)
 {
-   int num = 0, len = strlen(b), i;
+    unsigned int num = 0, base = 1;
+    int len = strlen(b), i;
 
-   for (i = 0; i < len; i++)
-   {
-        if (b[i] == 1)
-            num += 2**(len - i);
-   }
-   return num;
+    if (b == NULL)
+        return 0;
+
+    for (i = len - 1; i >= 0; i--)
+    {
+        if (b[i] == '1')
+        {
+            num += base;
+        }
+        else if (b[i] != '0')
+        {
+            return 0;
+        }
+        base *= 2;
+    }
+
+    return num;
 }
