@@ -28,7 +28,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		if (setbuffer == -1)
 		{
 			fclose(file_desc);
-			return (track);
+			return (0);
 		}
 
 		write(1, &setbuffer, 1);
