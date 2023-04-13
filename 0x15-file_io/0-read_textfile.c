@@ -11,6 +11,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	FILE *file_desc;
 	char setbuffer;
 	size_t track;
+	size_t storage;
 
 	track = 0;
 	if (filename == NULL)
@@ -22,7 +23,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	{
 		return (0);
 	}
-	setbuffer = fgetc(file_desc);
+	setbuffer = fgetc(file_desc);// storage = freads(setbuffer, sizeof(char), sizeof(setbuffer), file_desc);
 	while (track < letters)
 	{
 		if (setbuffer == -1)
@@ -32,12 +33,14 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		}
 		if (write(1, &setbuffer, 1) == -1)
 		{
+			free(setbuffer);
 			fclose(file_desc);
 			return (0);
 		}
 		track++;
 		setbuffer = fgetc(file_desc);
 	}
+	free(setbuffer);
 	fclose(file_desc);
 	return (track);
 }
