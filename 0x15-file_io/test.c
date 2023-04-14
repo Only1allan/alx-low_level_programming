@@ -1,3 +1,4 @@
+                                                                      
 #include <stdio.h>
 #include <stdlib.h>
 #include "main.h"
@@ -23,3 +24,36 @@ int main(int ac, char **av)
 	printf("%i\n", res);
 	return (0);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  

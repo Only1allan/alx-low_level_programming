@@ -8,27 +8,27 @@
 int append_text_to_file(const char *filename, char *text_content)
 {
 	FILE *fd;
-	size_t len;
-	size_t result;
+	int result = -1;
+	int counter = 0;
 
 	fd = fopen(filename, "a+");
 
 	if (fd == NULL)
 	{
-		return (-1);
+		return (result);
 	}
-	if (text_content == NULL)
+	if (text_content)
 	{
-		return (-1);
-	}
-
-	len = strlen(text_content);
-	result = fwrite(text_content, sizeof(char), len, fd);
-
-	if (result != len)
-	{
-		fclose(fd);
-		return (-1);
+		while (text_content[counter])
+		{
+			counter++;
+		}
+		result = fwrite(text_content, sizeof(char), counter, fd);
+		if (result < 0)
+		{
+			fclose(fd);
+			return (result);
+		}
 	}
 	fclose(fd);
 	return (1);
