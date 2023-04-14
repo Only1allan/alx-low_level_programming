@@ -24,12 +24,12 @@ int append_text_to_file(const char *filename, char *text_content)
 
 	len = strlen(text_content);
 	result = fwrite(text_content, sizeof(char), len, fd);
-	fclose(fd);
 
 	if (result != len)
 	{
 		return (-1);
 	}
+	fclose(fd);
 	return (1);
 }
 
