@@ -11,7 +11,7 @@ int append_text_to_file(const char *filename, char *text_content)
 	size_t len;
 	size_t result;
 
-	fd = fopen(filename, "a");
+	fd = fopen(filename, "a+");
 
 	if (fd == NULL)
 	{
