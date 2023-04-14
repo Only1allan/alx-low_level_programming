@@ -8,30 +8,37 @@
  */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	FILE *file_desc;
-	char setbuffer;
-	size_t track;
+	int file_desc, file_r, f_write;
+	char *setbuffer;
 
-
-	track = 0;
 	if (filename == NULL)
 	{
 		return (0);
 	}
-	file_desc = fopen(filename, "r");
-	if (file_desc == NULL)
+	file_desc = open(filename, O_RDONLY);
+	if (file_desc == -1)
 	{
 		return (0);
 	}
-	while ((setbuffer = fgetc(file_desc)) != EOF && (track < letters))
+	setbuffer = malloc(sizeof(char) * letters);
+	if (setbuffer == NULL)
 	{
-		if (write(1, &setbuffer, 1) == -1)
-		{
-			fclose(file_desc);
-			return (0);
-		}
-		track++;
+		return (0);
 	}
-	fclose(file_desc);
-	return (track);
+	file_r = read(file_desc, setbuffer, letters);
+
+	if (file_r == -1)
+	{
+		free(setbuffer);
+		return (0);
+	}
+	f_write = write(STDOUT_FILENO, setbuffer, file_r);
+	if (f_write == -1)
+	{
+		free(setbuffer);
+		return (0);
+	}
+	free(setbuffer);
+	close(file_desc);
+	return (f_write);
 }
