@@ -1,1 +1,1 @@
-A directory to solve search algorithm tasks
+A directory implementing various Search Algorithms in C
